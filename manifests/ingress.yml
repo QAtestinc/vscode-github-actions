@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "cisamples-4db8"
+    labels:
+        app: "cisamples-4db8"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: cisamplesab55-cisamples-4db8.3f1a35435f314c8d9c71.eastus.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "cisamples-4db8"
+                servicePort: 80
