@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "cisamples-4db8"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "cisamples-4db8"
+  template:
+    metadata:
+      labels:
+        app: "cisamples-4db8"
+    spec:
+      containers:
+        - name: "cisamples-4db8"
+          image: "bae116447b0e414eb03a5f0f293c5dc6.azurecr.io/cisamples"
+          ports:
+          - containerPort: 80
